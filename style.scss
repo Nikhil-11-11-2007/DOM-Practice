@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html.body{
+    height: 100%;
+    width: 100%;
+}
+
+html{
+    font-size: clamp(2rem,1vw,3rem);
+}
+
+@mixin flex-center($gap:0rem){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin height-width(){
+    background-color: #111;
+    height: 100vh;
+    width: 100%;
+}
+
+main{
+    .page1{
+        @include height-width();
+        @include flex-center();
+
+        .card{
+            height: 55vh;
+            width: 20%;
+            background-color: #dadada;
+            border-radius: 1rem;
+            @include flex-center(.7rem);
+
+            img{
+                height: 5rem;
+                width: 5rem;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+
+            h2{
+                font-size: 1rem;
+            }
+
+            h4{
+                font-size: 1rem;
+                color: red;
+            }
+
+            button{
+                padding: .4rem 1.2rem;
+                border: none;
+                border-radius: 1.5rem;
+                background-color: royalblue;
+                color: #fff;
+                font-size: .6rem;
+                font-weight: 500;
+                cursor: pointer
+            }
+
+        }
+    }
+    .page2{
+        @include height-width();
+        @include flex-center(0rem);
+        position: relative;
+        
+        .card{
+            height: 55vh;
+            width: 20%;
+            background-color: #dadada;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+
+            img{
+                height: 100%;
+                width: 100%;
+            }
+
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) scale(0);
+                opacity: 0;
+                transition: transform ease .5s;
+                font-size: 3rem;
+                color: #fff;
+                z-index: 2;
+            }
+            
+        }
+
+        .cursor{
+            height: 5vw;
+            width: 5vw;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            mix-blend-mode: difference;
+            pointer-events: none;
+            transition: left 0.02s ease, top 0.02s ease;
+        }
+    }
+}
