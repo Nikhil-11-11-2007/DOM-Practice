@@ -12,10 +12,29 @@ function FollowAnimation(){
         h4.style.color = isFollowed ? "royalblue" : "red";
         btn.style.color = isFollowed ? "blue" : "white";
         btn.style.backgroundColor = isFollowed ? "#ffffffc0" : "royalblue";
-});
+    });
 }
 
 FollowAnimation()
+
+function counterAnimation(){
+    let h1 = document.querySelector(".counter h1")
+let btn = document.querySelector("#add")
+let removebtn = document.querySelector("#remove")
+let count = 0
+
+btn.addEventListener("click", function() {
+    count++
+    h1.innerHTML = count
+})
+
+removebtn.addEventListener("click", function() {
+    count--
+    h1.innerHTML = count
+})
+}
+
+counterAnimation()
 
 function likeAnimation(){
     let page2i = document.querySelector(".card i")
@@ -46,3 +65,144 @@ page2.addEventListener("mousemove", function(dets){
 }
 
 cursorAnimation()
+
+function RandomColors(){
+    let box = document.querySelector(".box")
+let btn = document.querySelector(".page3 button")
+
+btn.addEventListener("click", function(){
+    let c1 = Math.floor(Math.random()*256)
+    let c2 = Math.floor(Math.random()*256)
+    let c3 = Math.floor(Math.random()*256)
+
+    box.style.backgroundColor = `rgb(${c1},${c2},${c3})`
+})
+}
+
+RandomColors()
+
+function iplTeamsAnimation(){
+    let iplTeams = [
+    {
+        team: 'CSK',
+        primary: 'yellow',
+        secondary: 'blue',
+        trophies: 5,
+        captain: 'Ruturaj Gaikwad',
+        image: 'https://wallpaperaccess.com/full/11900177.jpg'
+    },
+    {
+        team: 'MI',
+        primary: 'blue',
+        secondary: 'gold',
+        trophies: 5,
+        captain: 'Hardik Pandya',
+        image: 'https://y20india.in/wp-content/uploads/2024/04/mi-squad-ipl-2024-sportstiger-1702967642348-original-1024x538.jpg'
+    },
+    {
+        team: 'RCB',
+        primary: 'red',
+        secondary: 'black',
+        trophies: 0,
+        captain: 'Faf du Plessis',
+        image: 'https://www.oneindia.com/img/2024/01/rcb2-1704814556.jpg'
+    },
+    {
+        team: 'KKR',
+        primary: 'purple',
+        secondary: 'gold',
+        trophies: 3,
+        captain: 'Shreyas Iyer',
+        image: 'https://media.sportstiger.com/media/kkr-squad-ipl-2024-sportstiger-1702967454248-original.jpg'
+    },
+    {
+        team: 'RR',
+        primary: 'pink',
+        secondary: 'blue',
+        trophies: 1,
+        captain: 'Sanju Samson',
+        image: 'https://img.jagranjosh.com/images/2022/March/2932022/Rajasthan_royals.jpg'
+    },
+    {
+        team: 'SRH',
+        primary: 'orange',
+        secondary: 'black',
+        trophies: 1,
+        captain: 'Pat Cummins',
+        image: 'https://wallpapercave.com/wp/wp8945250.jpg'
+    },
+    {
+        team: 'DC',
+        primary: 'blue',
+        secondary: 'red',
+        trophies: 0,
+        captain: 'Rishabh Pant',
+        image: 'https://cdn.dnaindia.com/sites/default/files/styles/full/public/2022/12/23/2562417-untitled-design-2022-12-23t225333.153.jpg'
+    },
+    {
+        team: 'PBKS',
+        primary: 'red',
+        secondary: 'silver',
+        trophies: 0,
+        captain: 'Shikhar Dhawan',
+        image: 'https://fantasykhiladi.com/wp-content/uploads/2024/03/Punjab-Kings-2024-.webp'
+    },
+    {
+        team: 'GT',
+        primary: 'darkblue',
+        secondary: 'gold',
+        trophies: 1,
+        captain: 'Shubman Gill',
+        image: 'https://tse1.mm.bing.net/th/id/OIP.sqMGX_Ef_DDHOydpsSyM9AHaD4?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3'
+    },
+    {
+        team: 'LSG',
+        primary: 'lightblue',
+        secondary: 'orange',
+        trophies: 0,
+        captain: 'KL Rahul',
+        image: 'https://media.sportstiger.com/media/lucknow-super-giants-ipl-2025-sportstiger-1732539053179-original.webp'
+    }
+];
+
+let page4 = document.querySelector(".page4")
+let btn = document.querySelector(".page4 button")
+let h1 = document.querySelector(".page4 h1")
+
+btn.addEventListener("click", function(){
+    let teams = Math.floor(Math.random()*iplTeams.length)
+    let hi = iplTeams[teams]
+    h1.innerHTML = `Team: ${hi.team} <br> Captain: ${hi.captain} <br> Trophies: ${hi.trophies}`
+    h1.style.backgroundColor = hi.secondary
+    h1.style.color = hi.primary
+    btn.style.backgroundColor = hi.primary
+    page4.style.backgroundImage = `url(${hi.image})`
+})
+
+}
+
+iplTeamsAnimation()
+
+// hover on many divs and see image change both divs
+function hoverAnimation(){
+    let elem = document.querySelectorAll(".elem")
+let image = document.querySelector(".elem img")
+
+elem.forEach((val) => {
+
+    val.addEventListener("mousemove", function(dets){
+        let rect = val.getBoundingClientRect()
+        val.childNodes[3].style.left = (dets.x - rect.left) + "px"
+    })
+
+    val.addEventListener("mouseenter", function(){
+        val.childNodes[3].style.opacity = 1
+    })
+    val.addEventListener("mouseleave", function(){
+        val.childNodes[3].style.opacity = 0
+    })
+    
+})
+}
+
+hoverAnimation()

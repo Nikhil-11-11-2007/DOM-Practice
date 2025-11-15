@@ -10,9 +10,6 @@ html.body{
     width: 100%;
 }
 
-html{
-    font-size: clamp(2rem,1vw,3rem);
-}
 
 @mixin flex-center($gap:0rem){
     display: flex;
@@ -31,43 +28,66 @@ html{
 main{
     .page1{
         @include height-width();
-        @include flex-center();
+        @include flex-center(1rem);
 
         .card{
-            height: 55vh;
+            height: 30vw;
             width: 20%;
             background-color: #dadada;
-            border-radius: 1rem;
-            @include flex-center(.7rem);
+            border-radius: 1vw;
+            @include flex-center(2vw);
 
             img{
-                height: 5rem;
-                width: 5rem;
+                height: 7vw;
+                width: 7vw;
                 object-fit: cover;
                 object-position: center;
                 border-radius: 50%;
             }
 
             h2{
-                font-size: 1rem;
+                font-size: 2vw;
             }
 
             h4{
-                font-size: 1rem;
+                font-size: 2vw;
                 color: red;
             }
 
             button{
-                padding: .4rem 1.2rem;
+                padding: .9vw 3vw;
                 border: none;
-                border-radius: 1.5rem;
+                border-radius: 2vw;
                 background-color: royalblue;
                 color: #fff;
-                font-size: .6rem;
+                font-size: 1.3vw;
                 font-weight: 500;
                 cursor: pointer
             }
 
+        }
+
+        .counter{
+            height: 20vh;
+            width: 20vw;
+            text-align: center;
+            h1{
+                color: #fff;
+            }
+
+            #btn{
+                width: 100%;
+                height: 50%;
+                @include flex-center(0rem);
+                flex-direction: row;
+                justify-content: space-between;
+
+                button{
+                    padding: 1vw 2vw;
+                    font-size: 2vw;
+                    border-radius: 1vw;
+                }
+            }
         }
     }
     .page2{
@@ -114,4 +134,82 @@ main{
             transition: left 0.02s ease, top 0.02s ease;
         }
     }
+    .page3{
+        @include height-width();
+        @include flex-center(2rem);
+        .box{
+            height: 60vh;
+            width: 40vw;
+            background-color: rgb(0, 0, 0);
+            border-radius: 2vw;
+        }
+
+        button{
+            padding: 1vw 3vw;
+            font-size: 1.5vw;
+            background-color: darkred;
+            border: none;
+            border-radius: 1vw;
+        }
+        button:active{
+            scale: .9;
+        }
+    }
+    .page4 {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        background-image: url("https://user-gen-media-assets.s3.amazonaws.com/seedream_images/2ad1e315-5cb8-4445-b710-4b78cf94e17c.png");
+        background-size: cover;
+        background-position: center;
+        @include flex-center(2vw);
+
+        h1 {
+            color: #fff;
+            padding: 1.4vw 2vw;
+            border-radius: 1vw;
+            opacity: .5;
+        }
+
+        button {
+            padding: 1vw 3vw;
+            font-size: 1.5vw;
+            background-color: #999;
+            opacity: .7;
+            border: none;
+            border-radius: 1vw;
+        }
+
+        button:active {
+            scale: .9;
+        }
+    }
+    .page5{
+        @include height-width();
+        color: #fff;
+
+        .elem{
+            height: 23vh;
+            width: 100%;
+            border-bottom: 2px solid #fff;
+            @include flex-center(0rem);
+            align-items: flex-start;
+            position: relative;
+
+            h1{
+                font-size: 4vw;
+            }
+
+            img{
+                position: absolute;
+                height: 10vw;
+                width: 10vw;
+                border-radius: 50%;
+                opacity: 0;
+                object-fit: cover;
+                transition: left 0.02s ease;
+            }
+        }
+    }
+
 }
