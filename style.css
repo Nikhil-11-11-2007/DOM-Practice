@@ -204,6 +204,7 @@ main .page5 .elem h1 {
   font-size: 4vw;
 }
 main .page5 .elem img {
+  mix-blend-mode: difference;
   position: absolute;
   height: 10vw;
   width: 10vw;
@@ -212,4 +213,57 @@ main .page5 .elem img {
   -o-object-fit: cover;
      object-fit: cover;
   transition: left 0.02s ease;
+}
+main .page6 {
+  background-color: #111;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+}
+main .page6 .card {
+  height: 70vh;
+  width: 24vw;
+  background-color: #fff;
+  border-radius: 1vw;
+  overflow: hidden;
+  position: relative;
+}
+main .page6 .card .storiyan {
+  height: 9vw;
+  padding: 1vw 0;
+  background-color: rgba(218, 218, 218, 0.8549019608);
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+main .page6 .card .storiyan .story {
+  height: 7vw;
+  width: 7vw;
+  border: 2px solid red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 1vw;
+  overflow: hidden;
+}
+main .page6 .card .storiyan .story img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+main .page6 .card .statuss {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  display: none;
+}
+main .page6 .card .storiyan::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

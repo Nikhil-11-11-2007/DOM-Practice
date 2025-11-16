@@ -206,3 +206,57 @@ elem.forEach((val) => {
 }
 
 hoverAnimation()
+
+
+function storyAnimation() {
+    let stories = [
+    {
+        dp: "https://i.pinimg.com/736x/d5/ec/db/d5ecdbdd9baa9670481311ced1bfcc9f.jpg",
+        statuus: "https://i.pinimg.com/originals/fc/d4/97/fcd4977ee2e01c91ae0a60cd3cde280d.gif"
+    },
+    {
+        dp: "https://i.pinimg.com/736x/fe/f1/14/fef114123c2c3b69b523cf324c541887.jpg",
+        statuus: "https://i.pinimg.com/originals/22/ba/6a/22ba6a14459db3b5b12433452551d438.gif"
+    },
+    {
+        dp: "https://i.pinimg.com/736x/34/68/df/3468df3d585411cff414d5841b5822f2.jpg",
+        statuus: "https://i.pinimg.com/originals/8c/88/07/8c880706fbd0f28b645ccfb0fb6bf69b.gif"
+    },
+    {
+        dp: "https://i.pinimg.com/1200x/eb/21/5c/eb215cf240cdab050421c3a420a40bb5.jpg",
+        statuus: "https://i.pinimg.com/originals/36/be/d8/36bed86e6eb8b323a82280c66a3b0059.gif"
+    },
+    {
+        dp: "https://i.pinimg.com/1200x/ba/57/5c/ba575c165fc04e0600d6304e13b1c179.jpg",
+        statuus: "https://i.pinimg.com/originals/10/65/bc/1065bc662c55648c454c462f208d920e.gif"
+    },
+    {
+        dp: "https://i.pinimg.com/736x/3a/26/a9/3a26a99ea24f7a261a178ad20b26c86b.jpg",
+        statuus: "https://i.pinimg.com/originals/eb/8a/4d/eb8a4d77c9e87a7823b8c60cd27dcf36.gif"
+    },
+]
+
+let story = document.querySelector(".storiyan")
+let statuss = document.querySelector(".statuss")
+let clutter = ""
+
+stories.forEach((det, idx) => {
+    clutter += `<div class="story">
+                    <img id="${idx}" src="${det.dp}" alt="">
+                </div>`
+})
+
+story.innerHTML = clutter
+
+story.addEventListener("click", function(dets) {
+    statuss.style.display = "block"
+    statuss.style.backgroundImage = `url(${stories[dets.target.id].statuus})`
+
+    setTimeout(function(){
+        statuss.style.display = "none"
+    },3100)
+    
+})
+}
+
+storyAnimation()

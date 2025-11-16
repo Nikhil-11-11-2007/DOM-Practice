@@ -201,6 +201,7 @@ main{
             }
 
             img{
+                mix-blend-mode: difference;
                 position: absolute;
                 height: 10vw;
                 width: 10vw;
@@ -208,6 +209,59 @@ main{
                 opacity: 0;
                 object-fit: cover;
                 transition: left 0.02s ease;
+            }
+        }
+    }
+    .page6{
+        @include height-width();
+        @include flex-center(0rem);
+
+        .card{
+            height: 70vh;
+            width: 24vw;
+            background-color: #fff;
+            border-radius: 1vw;
+            overflow: hidden;
+            position: relative;
+
+            .storiyan{
+                height: 9vw;
+                padding: 1vw 0;
+                background-color: #dadadada;
+                white-space: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+                
+
+                .story{
+                    height: 7vw;
+                    width: 7vw;
+                    border: 2px solid red;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-left: 1vw;
+                    overflow: hidden;
+
+                    img{
+                        object-fit: cover;
+                        background-position: center;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .statuss{
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+                display: none;
+            }
+
+            .storiyan::-webkit-scrollbar{
+                display: none;
             }
         }
     }
