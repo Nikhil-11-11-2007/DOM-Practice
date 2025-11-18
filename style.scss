@@ -109,14 +109,24 @@ main{
                 width: 100%;
             }
 
-            i{
+            #hert1{
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%) scale(0);
                 opacity: 0;
                 transition: transform ease .5s;
-                font-size: 3rem;
+                font-size: 5rem;
+                color: #ff0066;
+                z-index: 2;
+            }
+
+            #hert2{
+                position: absolute;
+                right: 10%;
+                bottom: 5%;
+                transition: transform ease .5s;
+                font-size: 2rem;
                 color: #fff;
                 z-index: 2;
             }
@@ -265,5 +275,83 @@ main{
             }
         }
     }
+    .page7{
+        @include height-width();
+        @include flex-center(0rem);
+        form{
+            height: 70vh;
+            width: 27vw;
+            padding: 1vw;
+            background-color: rgb(254, 254, 255);
+            display: flex;
+            gap: 1vw;
+            flex-direction: column;
+            border-radius: 1vw;
+            box-shadow: 0 4px 15px rgba(162, 158, 158, 0.5);
 
+            input, textarea {
+                padding: .8vw;
+                border-radius: .5vw;
+                border: none;
+                outline: none;
+                font-size: 1vw;
+                background-color: #dcdcdc;
+                color: #111;
+            }
+            input::placeholder,  textarea::placeholder{
+                color: #3b3b3b;
+            }  
+
+            button {
+                padding: 1vw;
+                border-radius: 1vw;
+                border: none;
+                background-color: #5c6bc0;
+                color: #fff;
+                font-size: 1vw;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            button:active{
+                scale: .9;
+            }
+
+            textarea{
+                resize: none;
+                height: 40vw;
+            }
+
+            label {
+                font-weight: bold;
+                font-size: 1vw;
+            }
+        }
+
+    }
+    .page8{
+        @include height-width();
+        @include flex-center(0rem);
+        overflow: hidden;
+        position: relative;
+
+        button{
+            padding: 1vw 2.5vw;
+            border: none;
+            border-radius: 2vw;
+            background-color: darkred;
+            font-size: 1.3vw;
+            cursor: pointer;
+            position: relative;
+            z-index: 9;
+        }
+        button:active{
+            scale: .93;
+        }
+
+        h2{
+            color: #fff;
+            white-space: nowrap;
+        }
+    }
 }

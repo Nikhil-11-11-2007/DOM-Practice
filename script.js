@@ -37,7 +37,7 @@ removebtn.addEventListener("click", function() {
 counterAnimation()
 
 function likeAnimation(){
-    let page2i = document.querySelector(".card i")
+    let page2i = document.querySelector(".card #hert1")
 let page2card = document.querySelector(".page2 .card")
 
 page2card.addEventListener("dblclick", function(){
@@ -183,7 +183,7 @@ btn.addEventListener("click", function(){
 
 iplTeamsAnimation()
 
-// hover on many divs and see image change both divs
+// hover on many divs and see image change on both divs
 function hoverAnimation(){
     let elem = document.querySelectorAll(".elem")
 let image = document.querySelector(".elem img")
@@ -260,3 +260,31 @@ story.addEventListener("click", function(dets) {
 }
 
 storyAnimation()
+
+
+let btn = document.querySelector(".page8 button")
+let page8  = document.querySelector(".page8")
+
+btn.addEventListener("click", function() {
+    let arr = ["hello sheriyansh", "I am nikhil", "I create something", "please click the button", "hello Sarthak Bhaiya"]
+    let lenth = Math.floor(Math.random()*arr.length)
+    let c1 = Math.floor(Math.random()*256)
+    let c2 = Math.floor(Math.random()*256)
+    let c3 = Math.floor(Math.random()*256)
+    let x = Math.random()*100
+    let y = Math.random()*100
+    let scal = Math.random()*2
+    let rot = Math.floor(Math.random()*360)
+    btn.style.opacity = .6
+    btn.style.backgroundColor = `rgb(${c3},${c1},${c2})`
+    let h2 = document.createElement("h2")
+    h2.style.scale = scal
+    h2.style.color = `rgb(${c1},${c2},${c3})`
+    page8.style.backgroundColor = `rgb(${c2},${c3},${c1})`
+    h2.style.position = "absolute"
+    h2.style.rotate = rot+"deg"
+    h2.style.left = x+"%"
+    h2.style.top = y+"%"
+    h2.innerHTML = arr[lenth]
+    page8.appendChild(h2)
+})
