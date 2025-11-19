@@ -354,4 +354,57 @@ main{
             white-space: nowrap;
         }
     }
+    .page9{
+        @include height-width();
+        @include flex-center(0rem);
+        .card{
+            width: 35vw;
+            background-color: #fff;
+            padding: 2vw;
+            border-radius: 1vw;
+            text-align: center;
+            box-shadow: -.3vh -.3vh 50px .1vw  #fffefea1;
+            p{
+                padding: 2vw;
+                i{
+                    color: royalblue;
+                }
+            }
+            .loader{
+                height: 3vh;
+                width: 100%;
+                background-color: #dadada;
+                border-radius: 2vw;
+
+                .inner{
+                    background-color: green;
+                    height: 100%;
+                    width: 0%;
+                    border-radius: 2vw;
+                }
+            }
+
+            .download{
+                width: 100%;
+                padding: 2vw 0;
+                display: flex;
+                justify-content: space-between;
+
+                button{
+                    padding: 1vw 2.5vw;
+                    color: #fff;
+                    border: none;
+                    border-radius: 1vw;
+                    background-color: rgb(0, 139, 30);
+                    font-size: 1.3vw;
+                    cursor: pointer;
+                    position: relative;
+                    z-index: 9;
+                }
+                button:active{
+                    scale: .93;
+                }
+            }
+        }
+    }
 }

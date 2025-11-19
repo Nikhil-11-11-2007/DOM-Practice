@@ -261,8 +261,8 @@ story.addEventListener("click", function(dets) {
 
 storyAnimation()
 
-
-let btn = document.querySelector(".page8 button")
+function createElementAnimation() {
+    let btn = document.querySelector(".page8 button")
 let page8  = document.querySelector(".page8")
 
 btn.addEventListener("click", function() {
@@ -288,3 +288,35 @@ btn.addEventListener("click", function() {
     h2.innerHTML = arr[lenth]
     page8.appendChild(h2)
 })
+}
+
+createElementAnimation()
+
+function downloadAnimation(){
+    let btn = document.querySelector(".download button")
+let inner = document.querySelector(".inner")
+let h4 = document.querySelector(".page9 h4")
+let count = 0
+let h2 = document.querySelector(".download h2")
+btn.addEventListener("click", function() {
+    btn.style.pointerEvents = "none"
+    let num = 50 + Math.floor(Math.random()*60)
+    btn.innerHTML = "Downloading..."
+    
+    let int = setInterval(function() {
+        count++
+        inner.style.width = count + "%"
+        h2.innerHTML = count + "%"
+    }, num)
+
+    setTimeout(function() {
+        clearInterval(int)
+        h4.innerHTML = `Your File Donload in ${num/10} Second`
+        btn.style.opacity = .6
+        btn.innerHTML = "Downloaded"
+        btn.style.pointerEvents = "none"
+    }, num*100)
+})
+}
+
+downloadAnimation()
