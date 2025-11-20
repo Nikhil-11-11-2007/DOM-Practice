@@ -96,38 +96,38 @@ main{
         position: relative;
         
         .card{
-            height: 55vh;
+            padding: 2vw;
             width: 20%;
             background-color: #dadada;
             border-radius: 1.2rem;
             overflow: hidden;
             position: relative;
+            text-align: center;
             cursor: pointer;
+            .refer{
+                overflow: hidden;
+                position: relative;
+            }
 
             img{
-                height: 100%;
                 width: 100%;
+                margin-bottom: 2vw;
+                border-radius: 1.2rem;
             }
 
             #hert1{
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%) scale(0);
+                transform: translate(-50%,-50%) scale(0) rotate(-60deg);
                 opacity: 0;
-                transition: transform ease .5s;
-                font-size: 5rem;
-                color: #ff0066;
-                z-index: 2;
-            }
-
-            #hert2{
-                position: absolute;
-                right: 10%;
-                bottom: 5%;
-                transition: transform ease .5s;
-                font-size: 2rem;
-                color: #fff;
+                transition: all cubic-bezier(.65,1,.77,1.44) 0.5s;
+                font-size: 6rem;
+                background-image: url(https://t3.ftcdn.net/jpg/01/14/77/58/360_F_114775804_4yfG9qbKp1NlF1RLo4MUlGIVj9MWhnnc.jpg);
+                background-size: cover;
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
                 z-index: 2;
             }
             

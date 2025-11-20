@@ -41,12 +41,17 @@ function likeAnimation(){
 let page2card = document.querySelector(".page2 .card")
 
 page2card.addEventListener("dblclick", function(){
-    page2i.style.transform = "translate(-50%,-50%) scale(1)"
+    page2i.style.transform = "translate(-50%,-50%) scale(1) rotate(0deg)"
     page2i.style.opacity = 1
     setTimeout(function(){
-        page2i.style.transform = "translate(-50%,-50%) scale(0)"
+        page2i.style.transform = "translate(30%,-320%) scale(1) rotate(60deg)"
+    } ,800)
+    setTimeout(function() {
         page2i.style.opacity = 0
-    } ,1000)
+    },900)
+    setTimeout(function() {
+        page2i.style.transform = "translate(-50%,-50%) scale(0) rotate(-60deg)"
+    }, 1200)
     
 })
 }
