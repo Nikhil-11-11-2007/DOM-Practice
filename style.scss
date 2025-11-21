@@ -407,4 +407,41 @@ main{
             }
         }
     }
+    .page10{
+        @include height-width();
+        display: flex;
+        align-items: center;
+        column-gap: 3vw;
+        flex-wrap: wrap;
+        padding: 0vw 16vw;
+        .card{
+            height: 48vh;
+            width: 30%;
+            background-color: #dadada;
+            text-align: center;
+            padding: 1.5vw;
+            border-radius: 1vw;
+            box-shadow: .5vw .5vw 30px #c6c5c5a1;
+
+            img{
+                height: 8vw;
+                width: 8vw;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: top;
+            }
+            h3{
+                margin-top: 2vw;
+                font-size: 2vw;
+            }
+
+            h4{
+                margin: 1vw;
+                white-space: nowrap;
+                font-size: 1.3vw;
+                color: rgb(255, 0, 0);
+            }
+            
+        }
+    }
 }

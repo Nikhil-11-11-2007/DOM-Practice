@@ -418,4 +418,43 @@ main .page9 .card .download button {
 }
 main .page9 .card .download button:active {
   scale: 0.93;
+}
+main .page10 {
+  background-color: #111;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 3vw;
+       column-gap: 3vw;
+  flex-wrap: wrap;
+  padding: 0vw 16vw;
+}
+main .page10 .card {
+  height: 48vh;
+  width: 30%;
+  background-color: #dadada;
+  text-align: center;
+  padding: 1.5vw;
+  border-radius: 1vw;
+  box-shadow: 0.5vw 0.5vw 30px rgba(198, 197, 197, 0.631372549);
+}
+main .page10 .card img {
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+main .page10 .card h3 {
+  margin-top: 2vw;
+  font-size: 2vw;
+}
+main .page10 .card h4 {
+  margin: 1vw;
+  white-space: nowrap;
+  font-size: 1.3vw;
+  color: rgb(255, 0, 0);
 }/*# sourceMappingURL=style.css.map */

@@ -325,3 +325,59 @@ btn.addEventListener("click", function() {
 }
 
 downloadAnimation()
+
+function arrOfobjects() {
+    const users = [
+  {
+    fullname: "Nikhil Gupta",
+    image: "https://i.pinimg.com/1200x/b5/2c/0f/b52c0f7d6973061cf4553db19f50fe6b.jpg",
+    profession: "Frontend Developer",
+    description: "Passionate about creating beautiful UI and smooth user experiences."
+  },
+  {
+    fullname: "Aarav Sharma",
+    image: "https://i.pinimg.com/736x/3b/5e/ea/3b5eeac54e082547e6efa9aad1960887.jpg",
+    profession: "UI/UX Designer",
+    description: "Designs clean, modern and user-friendly interfaces."
+  },
+  {
+    fullname: "Priya Verma",
+    image: "https://i.pinimg.com/736x/88/4a/f9/884af9074ba60d58b9e5eecfdecef5ae.jpg",
+    profession: "Full-Stack Developer",
+    description: "Builds scalable full-stack applications with modern tools."
+  },
+  {
+    fullname: "Rohan Singh",
+    image: "https://i.pinimg.com/736x/cb/d5/bf/cbd5bf36469a72b49f0583ed73424d64.jpg",
+    profession: "Data Analyst",
+    description: "Turns raw data into meaningful insights and dashboards."
+  },
+  {
+    fullname: "Sana Khan",
+    image: "https://i.pinimg.com/736x/15/99/39/159939607f62aaba03970dbcf30aafb9.jpg",
+    profession: "Digital Marketer",
+    description: "Helps brands grow with smart marketing strategies."
+  },
+  {
+    fullname: "Aditya Patel",
+    image: "https://i.pinimg.com/736x/a4/85/27/a4852738fba268802712ab33fc083648.jpg",
+    profession: "Mobile App Developer",
+    description: "Creates fast and beautiful Android & iOS apps."
+  }
+];
+
+let page10 = document.querySelector(".page10")
+let clutter = ''
+
+users.forEach(function(obj, idx) {
+    clutter += `<div class="card">
+                <img src="${obj.image}" alt="">
+                <h3>${obj.fullname}</h3>
+                <h4>${obj.profession}</h4>
+                <p>${obj.description}</p>
+            </div>`
+})
+page10.innerHTML = clutter
+}
+
+arrOfobjects()
