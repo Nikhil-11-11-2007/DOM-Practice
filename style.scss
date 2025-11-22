@@ -277,57 +277,33 @@ main{
     }
     .page7{
         @include height-width();
-        @include flex-center(0rem);
-        form{
-            height: 70vh;
-            width: 27vw;
-            padding: 1vw;
-            background-color: rgb(254, 254, 255);
+        @include flex-center(7rem);
+        h2{
+            color: #fff;
+        }
+        .btn-container{
+            height: 38vh;
+            // background-color: #dadadada;
+            width: 100%;
             display: flex;
-            gap: 1vw;
-            flex-direction: column;
-            border-radius: 1vw;
-            box-shadow: 0 4px 15px rgba(162, 158, 158, 0.5);
 
-            input, textarea {
-                padding: .8vw;
+            .btn{
+                height: 38vh;
+                width: 5%;
                 border-radius: .5vw;
-                border: none;
-                outline: none;
-                font-size: 1vw;
-                background-color: #dcdcdc;
-                color: #111;
-            }
-            input::placeholder,  textarea::placeholder{
-                color: #3b3b3b;
-            }  
-
-            button {
-                padding: 1vw;
-                border-radius: 1vw;
-                border: none;
-                background-color: #5c6bc0;
-                color: #fff;
-                font-size: 1vw;
-                cursor: pointer;
-                transition: 0.3s;
+                @include flex-center(0rem);
+                justify-content: flex-end;
+                padding-bottom: 5vh;
+                border-right: 1px solid #777;
+                background-color: #fff;
+                box-shadow: 0vw .5vw 1px #707070ef;
+                font-size: 2vw;
             }
 
-            button:active{
-                scale: .9;
-            }
-
-            textarea{
-                resize: none;
-                height: 40vw;
-            }
-
-            label {
-                font-weight: bold;
-                font-size: 1vw;
+            .btn:active{
+                scale: .97;
             }
         }
-
     }
     .page8{
         @include height-width();

@@ -285,54 +285,34 @@ main .page7 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 0rem;
+  gap: 7rem;
 }
-main .page7 form {
-  height: 70vh;
-  width: 27vw;
-  padding: 1vw;
-  background-color: rgb(254, 254, 255);
-  display: flex;
-  gap: 1vw;
-  flex-direction: column;
-  border-radius: 1vw;
-  box-shadow: 0 4px 15px rgba(162, 158, 158, 0.5);
-}
-main .page7 form input, main .page7 form textarea {
-  padding: 0.8vw;
-  border-radius: 0.5vw;
-  border: none;
-  outline: none;
-  font-size: 1vw;
-  background-color: #dcdcdc;
-  color: #111;
-}
-main .page7 form input::-moz-placeholder, main .page7 form textarea::-moz-placeholder {
-  color: #3b3b3b;
-}
-main .page7 form input::placeholder, main .page7 form textarea::placeholder {
-  color: #3b3b3b;
-}
-main .page7 form button {
-  padding: 1vw;
-  border-radius: 1vw;
-  border: none;
-  background-color: #5c6bc0;
+main .page7 h2 {
   color: #fff;
-  font-size: 1vw;
-  cursor: pointer;
-  transition: 0.3s;
 }
-main .page7 form button:active {
-  scale: 0.9;
+main .page7 .btn-container {
+  height: 38vh;
+  width: 100%;
+  display: flex;
 }
-main .page7 form textarea {
-  resize: none;
-  height: 40vw;
+main .page7 .btn-container .btn {
+  height: 38vh;
+  width: 5%;
+  border-radius: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  justify-content: flex-end;
+  padding-bottom: 5vh;
+  border-right: 1px solid #777;
+  background-color: #fff;
+  box-shadow: 0vw 0.5vw 1px rgba(112, 112, 112, 0.937254902);
+  font-size: 2vw;
 }
-main .page7 form label {
-  font-weight: bold;
-  font-size: 1vw;
+main .page7 .btn-container .btn:active {
+  scale: 0.97;
 }
 main .page8 {
   background-color: #111;

@@ -381,3 +381,66 @@ page10.innerHTML = clutter
 }
 
 arrOfobjects()
+
+
+function pianoAnimation() {
+    let sounds = {
+    a: new Audio("sounds/A.wav"),
+    b: new Audio("sounds/B.wav"),
+    c: new Audio("sounds/C.wav"),
+    d: new Audio("sounds/D.wav"),
+    e: new Audio("sounds/E.wav"),
+    f: new Audio("sounds/F.wav"),
+    g: new Audio("sounds/G.wav"),
+    h: new Audio("sounds/H.wav"),
+    i: new Audio("sounds/I.wav"),
+    j: new Audio("sounds/J.wav"),
+    k: new Audio("sounds/K.wav"),
+    l: new Audio("sounds/L.wav"),
+    m: new Audio("sounds/M.wav"),
+    n: new Audio("sounds/N.wav"),
+    o: new Audio("sounds/O.wav"),
+    p: new Audio("sounds/P.wav"),
+    q: new Audio("sounds/Q.wav"),
+    r: new Audio("sounds/R.wav"),
+    s: new Audio("sounds/S.wav"),
+    t: new Audio("sounds/T.wav"),
+    u: new Audio("sounds/U.wav"),
+    v: new Audio("sounds/V.wav"),
+    w: new Audio("sounds/W.wav"),
+    x: new Audio("sounds/X.wav"),
+    y: new Audio("sounds/Y.wav"),
+    z: new Audio("sounds/Z.wav")
+};
+
+let h2 = document.querySelector(".page7 h2")
+
+window.addEventListener("keydown", function(dets){
+    let key = dets.key
+    if(sounds[key]){
+        h2.innerHTML = `You clicked ${dets.code}`
+        sounds[key].play()
+    }
+    let btn = this.document.querySelector(`.btn[data-key="${key}"]`)
+    if(btn){
+        btn.style.transform = "scale(.97)"
+        setTimeout(function(){
+            btn.style.transform = "scale(1)"
+        },100)
+    }
+    
+})
+
+let contbtn = document.querySelectorAll(".page7 .btn")
+
+contbtn.forEach(function(e) {
+    e.addEventListener("click", function(dett) {
+        let key = e.getAttribute("data-key")
+        if(sounds[key]){
+            sounds[key].play()
+        }
+    })
+})
+}
+
+pianoAnimation()
