@@ -81,8 +81,10 @@ main{
                 @include flex-center(0rem);
                 flex-direction: row;
                 justify-content: space-between;
+                
 
                 button{
+                    cursor: pointer;
                     padding: 1vw 2vw;
                     font-size: 2vw;
                     border-radius: 1vw;
@@ -156,6 +158,7 @@ main{
 
         button{
             padding: 1vw 3vw;
+            cursor: pointer;
             font-size: 1.5vw;
             background-color: darkred;
             border: none;
@@ -187,6 +190,7 @@ main{
             background-color: #999;
             opacity: .7;
             border: none;
+            cursor: pointer;
             border-radius: 1vw;
         }
 
@@ -205,6 +209,7 @@ main{
             @include flex-center(0rem);
             align-items: flex-start;
             position: relative;
+            cursor: pointer;
 
             h1{
                 font-size: 4vw;
@@ -248,6 +253,7 @@ main{
                     width: 7vw;
                     border: 2px solid red;
                     border-radius: 50%;
+                    cursor: pointer;
                     display: inline-block;
                     margin-left: 1vw;
                     overflow: hidden;
@@ -283,7 +289,6 @@ main{
         }
         .btn-container{
             height: 38vh;
-            // background-color: #dadadada;
             width: 100%;
             display: flex;
 
@@ -298,6 +303,7 @@ main{
                 background-color: #fff;
                 box-shadow: 0vw .5vw 1px #707070ef;
                 font-size: 2vw;
+                cursor: pointer;
             }
 
             .btn:active{
