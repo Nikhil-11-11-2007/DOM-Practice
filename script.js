@@ -444,3 +444,12 @@ contbtn.forEach(function(e) {
 }
 
 pianoAnimation()
+
+function lightEffect(){
+    addEventListener("mousemove", (dets) => {
+    document.querySelector(".page11").style.setProperty("--x", dets.clientX + "px")
+    document.querySelector(".page11").style.setProperty("--y", dets.clientY + "px")
+    
+})
+}
+lightEffect()

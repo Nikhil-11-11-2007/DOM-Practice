@@ -10,6 +10,11 @@ html.body {
   width: 100%;
 }
 
+:root {
+  --x: 50%;
+  --y: 50%;
+}
+
 main .page1 {
   background-color: #111;
   height: 100vh;
@@ -417,13 +422,13 @@ main .page10 {
   padding: 0vw 16vw;
 }
 main .page10 .card {
-  height: 48vh;
-  width: 30%;
+  height: 45vh;
+  width: 28%;
   background-color: #dadada;
   text-align: center;
   padding: 1.5vw;
   border-radius: 1vw;
-  box-shadow: 0.5vw 0.5vw 30px rgba(198, 197, 197, 0.631372549);
+  box-shadow: 0.1vw 0.1vw 20px rgba(198, 197, 197, 0.631372549);
 }
 main .page10 .card img {
   height: 8vw;
@@ -434,13 +439,81 @@ main .page10 .card img {
   -o-object-position: top;
      object-position: top;
 }
+main .page10 .card p {
+  font-size: 0.9vw;
+}
 main .page10 .card h3 {
   margin-top: 2vw;
-  font-size: 2vw;
+  font-size: 1.5vw;
 }
 main .page10 .card h4 {
   margin: 1vw;
   white-space: nowrap;
   font-size: 1.3vw;
   color: rgb(255, 0, 0);
+}
+main .page11 {
+  background-color: #111;
+  height: 100vh;
+  width: 100%;
+  background-color: #171717;
+  position: relative;
+  padding: 2vw;
+}
+main .page11 .box {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  background: radial-gradient(200px at var(--x) var(--y), rgba(255, 255, 255, 0.067), rgba(0, 0, 0, 0.907));
+}
+main .page11 .heading {
+  width: 100%;
+  padding: 2vw;
+  background-image: url(https://i.pinimg.com/originals/1f/a8/4f/1fa84f1d7d4ad96dd51f81804847967a.gif);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  border-radius: 1vw;
+}
+main .page11 .heading h2 {
+  font-family: monospace;
+  font-size: 2.5vw;
+  color: #fff;
+}
+main .page11 .elems {
+  height: 80vh;
+  margin-top: 1vh;
+  width: 100%;
+  border-radius: 1vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4vw;
+  padding-top: 1.6vw;
+  -moz-column-gap: 2vw;
+       column-gap: 2vw;
+}
+main .page11 .elems .elem {
+  height: 35vh;
+  width: 20vw;
+  background-color: #000;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  color: #fff;
+  box-shadow: 2px 2px 10px #7a7878;
+}
+main .page11 .elems .elem h3 {
+  font-size: 1.5vw;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-family: monospace;
 }/*# sourceMappingURL=style.css.map */
