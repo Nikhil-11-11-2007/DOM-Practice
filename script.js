@@ -452,4 +452,51 @@ function lightEffect(){
     
 })
 }
+
 lightEffect()
+
+function matrixEffect() {
+    let ps = document.querySelectorAll(".page12 p")
+
+    ps.forEach(function(p) {
+        let charactor = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ"
+        let increse = 0
+        let text = p.textContent
+        let int
+
+        p.addEventListener("mouseenter", function () {
+            increse = 0
+            clearInterval(int)
+
+            int = setInterval(function () {
+                let str = text.split("").map(function (val, idx) {
+                    if (increse > idx) return val
+                    return charactor[Math.floor(Math.random() * charactor.length)]
+                }).join("")
+
+                increse += 0.4
+                p.textContent = str
+
+                if (increse >= text.length) {
+                    clearInterval(int)
+                }
+            }, 40)
+        })
+
+        p.addEventListener("mouseleave", function () {
+            increse = 0
+            clearInterval(int)
+            p.textContent = text
+        })
+    })
+
+    let cursor = document.querySelector(".page12 .cursor")
+
+    let page12 = document.querySelector(".page12")
+    page12.addEventListener("mousemove", function(e) {
+        cursor.style.left = e.clientX + "px"
+        cursor.style.top = e.clientY + "px"
+    })
+}
+
+matrixEffect()

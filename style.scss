@@ -490,4 +490,36 @@ main{
             }
         }
     }
+    .page12{
+        @include height-width();
+        @include flex-center(2rem);
+        position: relative;
+        .cursor{
+            position: fixed;
+            mix-blend-mode: difference;
+            transform: translate(-50%,-50%);
+            height: 4vw;
+            width: 4vw;
+            transition: linear ease .1s;
+            border-radius: 50%;
+            background: linear-gradient(-45deg ,red,green);
+            box-shadow: 4px 3px 6px rgb(255, 0, 0);
+        }
+        
+        p{
+            cursor: pointer;
+            mix-blend-mode: difference;
+            color: #fff;
+            border-radius: 1vw;
+            text-transform: capitalize;
+            padding: 1vw;
+            font-size: 2rem;
+            font-family: monospace;
+            font-weight: 900;
+            background: linear-gradient(to left,red,green);
+            -webkit-background-clip: text;
+            color: transparent;
+            box-shadow: 2px 2px 5px red;
+        }
+    }
 }
