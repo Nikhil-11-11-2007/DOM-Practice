@@ -587,6 +587,61 @@ main{
         }
         
     }
+    .page14{
+        @include height-width();
+        @include flex-center(0rem);
+        overflow-x: hidden;
+        position: relative;
+        .cont{
+            height: 50vh;
+            width: 100%;
+            display: flex;
+            gap: 2rem;
+            overflow: auto;
+            padding: 2vw;
+
+            .image{
+                height: 100%;
+                width: 30vw;
+                border-radius: 1vw;
+                overflow: hidden;
+                flex-shrink: 0;
+                transition: all .3s ease;
+                box-shadow: 0 1px 40px #0093ee;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .abs{
+            height: 100%;
+            width: 100%;
+            background: radial-gradient(700px , rgba(0, 0, 0, 0), black);
+            position: absolute;
+            pointer-events: none;
+        }
+        .cont::-webkit-scrollbar{
+            display: none;
+        }
+        .cont:hover{
+            box-shadow: 0 0 30px #00adf2;
+            background: linear-gradient(rgba(0, 0, 0, 0.926)) content-box,
+                conic-gradient(from var(--Angle), black,#00fafd,#0093ee,black,black) border-box
+            ;
+            animation: bganimation 4s linear infinite forwards;
+            cursor: pointer;
+        }
+        .cont:has(.image:hover) .image{
+            transform: scale(.7);
+        }
+
+        .cont .image:hover{
+            transform: scale(1) !important;
+        }
+
+    }
 }
 
 @property --Angle {
@@ -598,11 +653,11 @@ main{
 @keyframes bganimation {
     from{
         --Angle:0deg;
-        transform: rotateX(-30deg) scale(.95);
+        // transform: rotateX(-30deg) scale(.95);
     }
 
     to{
         --Angle:360deg;
-        transform: rotateY(-20deg) scale(1.1) ;
+        // transform: rotateY(-20deg) scale(1.1) ;
     }
 }

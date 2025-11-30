@@ -618,6 +618,63 @@ main .page13 .card.card3:hover {
   text-shadow: 0 0 2px #00fafd;
   cursor: pointer;
 }
+main .page14 {
+  background-color: #111;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+  overflow-x: hidden;
+  position: relative;
+}
+main .page14 .cont {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  overflow: auto;
+  padding: 2vw;
+}
+main .page14 .cont .image {
+  height: 100%;
+  width: 30vw;
+  border-radius: 1vw;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 40px #0093ee;
+}
+main .page14 .cont .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .page14 .abs {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(700px, rgba(0, 0, 0, 0), black);
+  position: absolute;
+  pointer-events: none;
+}
+main .page14 .cont::-webkit-scrollbar {
+  display: none;
+}
+main .page14 .cont:hover {
+  box-shadow: 0 0 30px #00adf2;
+  background: linear-gradient(rgba(0, 0, 0, 0.926)) content-box, conic-gradient(from var(--Angle), black, #00fafd, #0093ee, black, black) border-box;
+  animation: bganimation 4s linear infinite forwards;
+  cursor: pointer;
+}
+main .page14 .cont:has(.image:hover) .image {
+  transform: scale(0.7);
+}
+main .page14 .cont .image:hover {
+  transform: scale(1) !important;
+}
 
 @property --Angle {
   syntax: "<angle>";
@@ -627,10 +684,8 @@ main .page13 .card.card3:hover {
 @keyframes bganimation {
   from {
     --Angle:0deg;
-    transform: rotateX(-30deg) scale(0.95);
   }
   to {
     --Angle:360deg;
-    transform: rotateY(-20deg) scale(1.1);
   }
 }/*# sourceMappingURL=style.css.map */
