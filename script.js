@@ -500,3 +500,70 @@ function matrixEffect() {
 }
 
 matrixEffect()
+
+function getrandom() {
+    let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()-_=+[]{};:,.<>/?0123456789";
+    let emojis = ["😀","🔥","💀","⚡","🌟","🌀","😈","✨","💫","👾"];
+
+    if (Math.random() > 0.5) {
+        return chars[Math.floor(Math.random() * chars.length)];
+    } else {
+        return emojis[Math.floor(Math.random() * emojis.length)];
+    }
+}
+
+let btn = document.querySelector(".page15 button");
+let matrix = document.querySelector(".page15 .matrix");
+
+let intervalID = null;
+let isRaining = false;
+
+function matri() {
+    let span = document.createElement("span");
+    span.textContent = getrandom();
+
+    let lft = Math.random() * window.innerWidth;
+    span.style.left = lft + "px";
+    span.style.top = "-20px";
+
+    let speed = 3 + Math.random() * 3;
+    span.style.animationDuration = speed + "s";
+
+    span.addEventListener("mouseenter", function () {
+        let c1 = Math.floor(Math.random() * 256);
+        let c2 = Math.floor(Math.random() * 256);
+        let c3 = Math.floor(Math.random() * 256);
+
+        span.style.color = `rgb(${c1},${c2},${c3})`;
+        span.style.fontSize = "4vw";
+        span.style.transition = "all 0.4s ease";
+
+        setTimeout(() => {
+            span.style.fontSize = "22px";
+        }, 400);
+    });
+
+    matrix.appendChild(span);
+
+    setTimeout(() => {
+        span.remove();
+    }, speed * 1000);
+}
+
+btn.addEventListener("click", () => {
+    if (!isRaining) {
+        // Start rain
+        intervalID = setInterval(matri, 80);
+        isRaining = true;
+        btn.style.opacity = .4
+        btn.textContent = "Stop Rain";
+    } else {
+        // Stop rain
+        clearInterval(intervalID);
+        intervalID = null;
+        btn.style.opacity = 1
+        isRaining = false;
+        btn.textContent = "Click Here to start rainfall";
+    }
+});
+

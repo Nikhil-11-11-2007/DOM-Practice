@@ -642,6 +642,42 @@ main{
         }
 
     }
+    .page15{
+        @include height-width();
+        overflow: hidden;
+        position: relative;
+        .matrix{
+            @include height-width();
+            @include flex-center(0rem);
+
+            button{
+                padding: 1vw 2vw;
+                font-size: 2vw;
+                border-radius: 2vw;
+                cursor: pointer;
+                mix-blend-mode: difference;
+                border-radius: 1vw;
+                text-transform: capitalize;
+                font-weight: 900;
+                background: linear-gradient(to left,red,green,blue,yellow);
+                -webkit-background-clip: text;
+                color: transparent;
+                box-shadow: 2px 2px 5px rgb(204, 255, 0);
+                
+            }
+        }
+        .matrix span {
+            position: absolute;
+            color: rgb(0, 242, 255);
+            font-size: 22px;
+            font-family: monospace;
+            white-space: nowrap;
+            user-select: none;
+            cursor: pointer;
+            z-index: 6;
+            animation: fall linear forwards;
+        }
+    }
 }
 
 @property --Angle {
@@ -653,11 +689,22 @@ main{
 @keyframes bganimation {
     from{
         --Angle:0deg;
-        // transform: rotateX(-30deg) scale(.95);
+        transform: rotateX(-30deg) scale(.95);
     }
 
     to{
         --Angle:360deg;
-        // transform: rotateY(-20deg) scale(1.1) ;
+        transform: rotateY(-20deg) scale(1.1) ;
+    }
+}
+
+@keyframes fall {
+    from{
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
     }
 }

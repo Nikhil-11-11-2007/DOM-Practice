@@ -675,6 +675,50 @@ main .page14 .cont:has(.image:hover) .image {
 main .page14 .cont .image:hover {
   transform: scale(1) !important;
 }
+main .page15 {
+  background-color: #111;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+main .page15 .matrix {
+  background-color: #111;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0rem;
+}
+main .page15 .matrix button {
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  border-radius: 2vw;
+  cursor: pointer;
+  mix-blend-mode: difference;
+  border-radius: 1vw;
+  text-transform: capitalize;
+  font-weight: 900;
+  background: linear-gradient(to left, red, green, blue, yellow);
+  -webkit-background-clip: text;
+  color: transparent;
+  box-shadow: 2px 2px 5px rgb(204, 255, 0);
+}
+main .page15 .matrix span {
+  position: absolute;
+  color: rgb(0, 242, 255);
+  font-size: 22px;
+  font-family: monospace;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  z-index: 6;
+  animation: fall linear forwards;
+}
 
 @property --Angle {
   syntax: "<angle>";
@@ -684,8 +728,20 @@ main .page14 .cont .image:hover {
 @keyframes bganimation {
   from {
     --Angle:0deg;
+    transform: rotateX(-30deg) scale(0.95);
   }
   to {
     --Angle:360deg;
+    transform: rotateY(-20deg) scale(1.1);
+  }
+}
+@keyframes fall {
+  from {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
   }
 }/*# sourceMappingURL=style.css.map */
